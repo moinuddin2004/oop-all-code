@@ -1,0 +1,52 @@
+--DDL Language
+create database inventory_base;
+--drop database inventory_base;
+create table products
+(
+pid int primary key identity(1,1), --identity AutoNumber Field
+batch int,			   --primary key contain unique values
+name varchar(20),
+price float
+);
+
+--DML and DQL 
+select * from products;
+insert into products values (2017,'Printer',3000);
+insert into products values (2018,'Scanner',4000);
+insert into products values (2018,'Laptop',6000);
+insert into products values (2019,'HardDrive',9000);
+--Select, where, AND OR
+select * from products where price<=6000;
+select * from products where price<6000 and batch<2018;
+select * from products where price<6000 or batch<2018;
+select name,pid from products where price<4000;
+select name from products;
+--select avg,sum 
+select AVG(price) from products;
+select AVG(price) as avg_price from products;
+select SUM(price) as sum_price from products;
+--update
+update products set price=3000 where pid=3;
+update products set name='Laptop4440' where pid=3;
+update products set price=null;
+--delete 
+delete from products where pid = 4;
+delete from products;
+create table users
+(
+pid int primary key identity(1,1),
+name varchar(20),
+pw varchar(20),
+);
+insert into users values('Ali','Ahmed');
+insert into users values('Abdul','Rehman');
+select * from users;
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+using System;
+
+// Abstract base class: Ticket
+abstract class Ticket
+{
+    public string EventName;
+    public DateTime EventDate;
+    public string Venue;
+    public double Price;
+
+    public abstract void PrintTicket();
+}
+
+// Subclass: PlayTicket
+class PlayTicket : Ticket
+{
+    public string Theater;
+    public string Playwright;
+
+    public override void PrintTicket()
+    {
+        Console.WriteLine("Event: {0}", EventName);
+        Console.WriteLine("Date: {0}", EventDate);
+        Console.WriteLine("Venue: {0}", Venue);
+        Console.WriteLine("Price: {0}", Price);
+        Console.WriteLine("Theater: {0}", Theater);
+        Console.WriteLine("Playwright: {0}", Playwright);
+        Console.WriteLine("------------------------------");
+    }
+}
+
+// Subclass: ConcertTicket
+class ConcertTicket : Ticket
+{
+    public string Artist;
+    public string Band;
+
+    public override void PrintTicket()
+    {
+        Console.WriteLine("Event: {0}", EventName);
+        Console.WriteLine("Date: {0}", EventDate);
+        Console.WriteLine("Venue: {0}", Venue);
+        Console.WriteLine("Price: {0}", Price);
+        Console.WriteLine("Artist: {0}", Artist);
+        Console.WriteLine("Band: {0}", Band);
+        Console.WriteLine("------------------------------");
+    }
+}
+
+// Subclass: BasketballGameTicket
+class BasketballGameTicket : Ticket
+{
+    public string HomeTeam;
+    public string AwayTeam;
+
+    public override void PrintTicket()
+    {
+        Console.WriteLine("Event: {0}", EventName);
+        Console.WriteLine("Date: {0}", EventDate);
+        Console.WriteLine("Venue: {0}", Venue);
+        Console.WriteLine("Price: {0}", Price);
+        Console.WriteLine("Home Team: {0}", HomeTeam);
+        Console.WriteLine("Away Team: {0}", AwayTeam);
+        Console.WriteLine("------------------------------");
+    }
+}
+
+// Presentation class to test the ticket reservation system
+class Program
+{
+    static void Main()
+    {
+        PlayTicket playTicket = new PlayTicket();
+
+        playTicket.EventName = "Shakespearean Play";
+        playTicket.EventDate = DateTime.Now.AddDays(7);
+        playTicket.Venue = "City Theater";
+        playTicket.Price = 50.0;
+        playTicket.Theater = "Globe Theater";
+        playTicket.Playwright = "William Shakespeare";
+
+
+        ConcertTicket concertTicket = new ConcertTicket();
+        
+        concertTicket.EventName = "Rock Concert";
+        concertTicket.EventDate = DateTime.Now.AddDays(14);
+        concertTicket.Venue = "Stadium";
+        concertTicket.Price = 100.0;
+        concertTicket.Artist = "John Doe";
+        concertTicket.Band = "The Band";
+
+
+        BasketballGameTicket basketballTicket = new BasketballGameTicket();
+       
+            basketballTicket.EventName = "Home Basketball Game";
+            basketballTicket.EventDate = DateTime.Now.AddDays(21);
+            basketballTicket.Venue = "Arena";
+            basketballTicket.Price = 75.0;
+            basketballTicket.HomeTeam = "Local Team";
+            basketballTicket.AwayTeam = "Opponent Team";
+        
+
+        playTicket.PrintTicket();
+        concertTicket.PrintTicket();
+        basketballTicket.PrintTicket();
+
+        Console.ReadLine();
+    }
+}

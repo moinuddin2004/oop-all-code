@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApplication41
+{
+    class Employee
+    {                       //Salary 800 + allowance 200
+        private int Totalsalary = 1000;//original value will remain same
+        public int salaryaccess //read property
+        {
+            get { return Totalsalary; }//read only
+
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int bonus;
+            Employee zain = new Employee();
+            bonus = zain.salaryaccess / 100 * 30;
+            Console.WriteLine("30 % Bonus will be :{0}",bonus);
+         }
+    }
+}

@@ -1,0 +1,38 @@
+
+using System;
+namespace ConsoleApplication56
+{
+    class Program
+    {        
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[5] ;
+
+            for(int a=0; a<5; a++)
+            {
+                Console.WriteLine("Enter "+a+" Value");
+                numbers[a]= Convert.ToInt32(Console.ReadLine());
+                
+            }
+            
+            Console.WriteLine(" Initial Array Elements  ");
+            foreach(int a in numbers)
+            {
+                Console.WriteLine(a);
+            }
+            
+            Array.Sort(numbers);
+            
+            Console.WriteLine(" Elements After Sort ");
+            
+            foreach (int a in numbers)
+            {
+                Console.WriteLine(a);
+            }
+            
+            Console.WriteLine("Largest Value: "+numbers[4]);
+            Console.WriteLine("Smallest Value: "+numbers[0]);
+            
+        }
+    }
+}

@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FirstAPPinCsharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" OOP in C# ");
+            Console.ReadKey();
+        }
+    }
+}

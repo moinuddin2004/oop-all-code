@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApplication63
+{
+    interface Iname 
+    {
+        void displayname(string name);
+    }
+    interface Ilocation
+    {
+        void displaylocation(string location);
+    }
+    interface Iage
+    {
+        void displayage(string age);
+    }
+    class User : Iname, Ilocation, Iage 
+    {
+      public void displayname(string name) 
+        {
+            Console.WriteLine(" Name :  "+name);
+        }
+      public void displaylocation(string location) 
+        {
+            Console.WriteLine(" Location :  " + location);
+        }
+      public void displayage(string age) 
+        {
+            Console.WriteLine(" Age :  " + age);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            User u = new User();
+            u.displayname(" Ali Ahmed ");
+            u.displaylocation(" Karachi ");
+            u.displayage("65");
+            Console.Read();
+        }
+    }
+}

@@ -1,0 +1,35 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter Miles Driven: ");
+        string milesInput = Console.ReadLine();
+
+        Console.WriteLine("Enter Gallons Used: ");
+        string gallonsInput = Console.ReadLine();
+
+        try
+        {
+            double miles = double.Parse(milesInput);
+            double gallons = double.Parse(gallonsInput);
+
+            double mpg = CalculateMilesPerGallon(miles, gallons);
+            Console.WriteLine("Miles per Gallon (MPG): " + mpg);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input. Please enter valid numeric values for miles driven and gallons used.");
+        }
+        Console.ReadLine();
+    }
+
+    static double CalculateMilesPerGallon(double miles, double gallons)
+    {
+        if (gallons == 0)
+        {
+            throw new DivideByZeroException("Gallons used cannot be zero.");
+        }
+        return miles / gallons;
+    }
+}

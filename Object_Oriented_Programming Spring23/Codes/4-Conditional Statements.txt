@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FirstAPPinCsharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int number1;
+            Console.WriteLine(" Enter Number 1 :");
+            number1 = Convert.ToInt32(Console.ReadLine());
+            if(number1<5)
+            {
+                Console.WriteLine("  {0} is less than 5 ",number1);
+            }
+            else if (number1 > 5)
+            {
+                Console.WriteLine("  {0} is greater than 5 ", number1);
+            }
+            else
+            {
+                Console.WriteLine("  {0} is Equal to 5 ", number1);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+
+

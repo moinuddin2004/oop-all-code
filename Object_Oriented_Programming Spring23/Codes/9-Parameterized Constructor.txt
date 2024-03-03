@@ -1,0 +1,46 @@
+
+using System;
+
+namespace mycar
+{
+    class car 
+    {
+        int year;
+        string make;
+        string model;
+        public car(int yr, string mk, string md) //parameterized Constructor 
+        {
+            year = yr;
+            make = mk;
+            model = md;
+        }
+        public void display()//A simple method 
+        {
+            Console.WriteLine("Year : "+year+" Make : "+make+" Model :"+model);
+        }
+      
+    }
+   class Program
+    {
+        static void Main(string[] args)
+        {
+            
+           car honda = new car(2022, "Honda", "Civic");
+           honda.display(); 
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

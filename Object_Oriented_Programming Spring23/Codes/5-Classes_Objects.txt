@@ -1,0 +1,38 @@
+using System;
+
+namespace Tax
+{
+    class EmployeeTax
+    {
+        public int sal;
+        public string name;
+        public int tax_amount;
+        public void TaxCalculator(int taxperc)
+        {
+            tax_amount = (sal / 100) * taxperc;
+        }
+        public void displaytax()
+        {
+            Console.WriteLine("Name With Tax {0} {1}:", name, tax_amount);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            EmployeeTax sohaib = new EmployeeTax();//Creating an object
+            sohaib.name = "Sohaib";
+            sohaib.sal = 1000;
+            sohaib.TaxCalculator(25);
+            sohaib.displaytax();
+
+
+            EmployeeTax zain = new EmployeeTax();//Creating an object
+            zain.name = "zain";
+            zain.sal = 2000;
+            zain.TaxCalculator(25);
+            zain.displaytax();
+
+        }
+    }
+}

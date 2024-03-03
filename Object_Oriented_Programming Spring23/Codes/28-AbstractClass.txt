@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApplication63
+{
+    abstract class colors 
+    {
+        public abstract void color();
+        public void displayinfo() 
+        {
+            Console.WriteLine(" i m the simple method of abstract class ");
+        }
+    }
+    class red : colors 
+    {
+        public override void color()
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine(" i m the red class.... ");
+        }
+    
+    }
+    class blue : colors
+    {
+        public override void color()
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine(" i m the blue class.... ");
+        }
+
+    }
+    class green : colors
+    {
+        public override void color()
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.WriteLine(" i m the green class.... ");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            colors clr = new red();
+            clr.color();
+            clr.displayinfo();
+            colors clb = new blue();
+            clb.color();
+            clb.displayinfo();
+            colors clg = new green();
+            clg.color();
+            clg.displayinfo();
+           
+            Console.Read();
+        }
+    }

@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApplication63
+{
+    interface Icolor 
+    {
+        void coloring();//Interface cannot have method body 
+        void info();//just have signature(s) of method
+    }
+    class red : Icolor 
+    {
+        public void info() 
+        {
+            Console.WriteLine(" i m the red class... ");
+        }
+        public void coloring() 
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Red; 
+        }
+    }
+    class blue : Icolor 
+    {
+        public void info()
+        {
+            Console.WriteLine(" i m the blue class... ");
+        }
+        public void coloring()
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Blue;
+        }
+    
+    }
+    class green : Icolor
+    {
+        public void info()
+        {
+            Console.WriteLine(" i m the green class... ");
+        }
+        public void coloring()
+        {
+            Console.ForegroundColor = ConsoleColor.White;//ForegroundColor property in the console class
+            Console.BackgroundColor = ConsoleColor.Green;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Icolor clr = new red();//we created an instance for interface "Icolor" using red class;
+            clr.coloring();
+            clr.info();
+            Icolor clb = new blue();
+            clb.coloring();
+            clb.info();
+            Icolor clg = new green();
+            clg.coloring();
+            clg.info();
+
+            Console.Read();
+        }
+    }
+}
